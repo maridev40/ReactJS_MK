@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import 'vars';
+@import 'mixins';
+@import 'base';
+@import 'header';
+@import 'index';
+@import 'catalog';
+@import 'basket';
+@import 'footer';
+@import 'products';
+@import 'registration';
+
+
+@media (max-width: $tabletWidth) {
+    .center {
+        padding-left: calc(50% - $tableCalcWidth);
+        padding-right: calc(50% - $tableCalcWidth);
+    }
+
+    .top {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .top_img {
+        display: none;
+    }
+
+    .top_title1 {
+        font-size: 42px;
+        font-weight: 900;
+    }
+
+    .top_title2 {
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    .middle {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .middle_item3 {
+        grid-column: span 2;
+    }
+
+    .middle_item4 {
+        grid-column: span 2;
+    }
+
+    .content_item img {
+        width: 100%;
+    }
+
+    .service {
+        flex-direction: column;
+
+        &__icon path {
+            fill: $colorTextLight;
+        }
+
+        &__flex:hover path {
+            fill: $colorSelection;
+        }
+    }
+
+    .subscribe {
+        flex-direction: column;
+        gap: 48px;
+    }
+}
+
+@media (max-width: $phoneWidth) {
+    .center {
+        padding-left: calc(50% - $phoneCalcWidth);
+        padding-right: calc(50% - $phoneCalcWidth);
+    }
+
+    .top_title {
+        padding-left: 20px;
+    }
+
+    .top_title1 {
+        font-size: 38px;
+        font-weight: 900;
+    }
+
+    .top_title2 {
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .middle {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .middle_item3 {
+        grid-column: span 1;
+    }
+
+    .middle_item4 {
+        grid-column: span 1;
+    }
+
+    .menu_person {
+        display: none;
+    }
+
+    .menu_basket {
+        display: none;
+    }
+}

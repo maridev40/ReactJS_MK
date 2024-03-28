@@ -1,0 +1,146 @@
+.header {
+    padding-top: 18px;
+    padding-bottom: 19px;
+    background-color: $colorBackDark;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+
+    &_left {
+        @include flexCenter($justifyContent: flex-start);
+        gap: 41px;
+    }
+
+    &_right {
+        @include flexCenter($justifyContent: flex-end);
+        gap: 33px;
+    }
+}
+
+.header_menu__svg:hover path {
+    fill: $colorSelection;
+}
+
+#burger {
+    left: -999999px;
+    visibility: hidden;
+    position: absolute;
+
+    &:checked~.menu {
+        right: -$burgerMenuWidth;
+    }
+}
+
+.menu {
+    background: #FFF;
+    width: $burgerMenuWidth;
+    padding: 32px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    transition: right .3s;
+    z-index: 20;
+
+    @media (max-width: $phoneWidth) {
+        width: calc($burgerMenuWidth / 2);
+    }
+
+    &__summary {
+        display: flex;
+        align-items: center;
+    }
+
+    &__heading {
+        color: #000;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    &[open] &__heading {
+        color: $colorSelection;
+    }
+
+    &__item {
+        margin-top: 16px;
+    }
+
+    &__item[open] .menu__head {
+        color: $colorSelection;
+    }
+
+    &__link-box {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+        padding: 24px 16px;
+    }
+
+    &__head {
+        color: #636363;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    &__link {
+        color: #6F6E6E;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: 'latolight';
+
+        &:hover {
+            color: $colorSelection;
+        }
+    }
+}
+
+.top-head {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $colorTopHead;
+
+    @media (max-width: $tabletWidth) {
+        gap: 16px;
+    }
+
+    &__heading {
+        color: $colorSelection;
+        font-size: 24px;
+        font-weight: 400;
+
+        @media (max-width: $tabletWidth) {
+            margin-left: 16px;
+        }
+    }
+}
+
+
+.breadcrumbs {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 300;
+
+    &__link {
+        color: $colorNav;
+
+        @media (max-width: $tabletWidth) {
+            margin-right: 16px;
+        }
+
+        &:hover {
+            color: $colorSelection;
+            font-weight: 700;
+        }
+    }
+
+    &__link_site {
+        color: $colorSelection;
+        font-size: 14px;
+        font-weight: 700;
+    }
+}

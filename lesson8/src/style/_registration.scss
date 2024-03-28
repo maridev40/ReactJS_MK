@@ -1,0 +1,93 @@
+.registration-content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: ($phoneWidth * 1.5)) {
+        flex-direction: column;
+    }
+
+    &__form {
+        &_flex {
+            display: flex;
+            flex-direction: column;
+            min-width: 360px;
+            max-width: 360px;
+            color: #222;
+        }
+
+        &_title {
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        &_input {
+            width: 360px;
+            height: 45px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            font-weight: 300;
+            color: #B1B1B1;
+            border: 1px solid #A4A4A4;
+        }
+
+        &_radio {
+            margin-bottom: 20px;
+            font-size: 11px;
+            font-weight: 300;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        &_subtitle {
+            color: #B1B1B1;
+        }
+
+        &_button {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            width: 167px;
+            height: 50px;
+            font-size: 14px;
+            font-weight: 400;
+            border: 0;
+
+            &:hover {
+                color: #FFF;
+                background-color: $colorSelection;
+            }
+        }
+    }
+
+    &__loyalty {
+        display: grid;
+        grid-template-columns: 1fr 7fr;
+        font-size: 24px;
+        font-weight: 300;
+
+        @media (max-width: ($phoneWidth * 1.5)) {
+            grid-template-columns: 1fr;
+        }
+
+        @media (max-width: $tabletWidth) {
+            font-size: 16px;
+        }
+
+        &_title {
+            margin-bottom: 32px;
+        }
+
+        &_tick {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+        }
+
+        &_subtitle {
+            margin-bottom: 20px;
+        }
+    }
+}
